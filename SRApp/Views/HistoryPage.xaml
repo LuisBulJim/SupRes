@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SRApp.Views.HistoryPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#f4f6f6">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label Text="Historial"
+               FontSize="24"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               Grid.Row="0" />
+
+        <!-- No hay conexión -->
+        <Label x:Name="NoConnectionLabel"
+               Margin="0,40,0,0"
+               Text="No hay conexión con el servidor"
+               TextColor="Black"
+               FontAttributes="Bold"
+               IsVisible="False"
+               HorizontalOptions="Center"
+               FontSize="18"
+               VerticalOptions="Center"
+               Grid.Row="1" />
+
+        <!-- No hay imágenes -->
+        <Label x:Name="NoImagesLabel"
+               Text="No hay imágenes todavía"
+               TextColor="Black"
+               FontSize="19"
+               Margin="0,40,0,0"
+               IsVisible="False"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Grid.Row="2" />
+
+        <!-- CollectionView con las imágenes -->
+        <CollectionView x:Name="UserImagesCollection"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged"
+                        Grid.Row="3">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="2"
+                                 VerticalItemSpacing="15"
+                                 HorizontalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <AbsoluteLayout WidthRequest="150" HeightRequest="150">
+                        <!-- Border para mostrar la imagen -->
+                        <Border InputTransparent="True"
+                                Padding="0"
+                                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                AbsoluteLayout.LayoutFlags="All">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10" />
+                            </Border.StrokeShape>
+                            <Image Source="{Binding FullOriginalImageUrl}"
+                                   Aspect="AspectFill" />
+                        </Border>
+
+                        <!-- Border para el label de ScaleOption -->
+                        <Border InputTransparent="True"
+                                Padding="0"
+                                BackgroundColor="#80000000"
+                                Stroke="Transparent"
+                                AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize"
+                                AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="7" />
+                            </Border.StrokeShape>
+                            <Label Text="{Binding ScaleOption}"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Padding="5,2" />
+                        </Border>
+
+                        <!-- Border para el label de Status -->
+                        <Border InputTransparent="True"
+                                Padding="0"
+                                Stroke="Transparent"
+                                AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"
+                                AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="7" />
+                            </Border.StrokeShape>
+                            <Label Text="{Binding Status}"
+                                   TextColor="White"
+                                   Padding="5,2"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                            <Border.Triggers>
+                                <DataTrigger TargetType="Border"
+                                             Binding="{Binding Status}"
+                                             Value="procesada">
+                                    <Setter Property="BackgroundColor" Value="Green" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Border"
+                                             Binding="{Binding Status}"
+                                             Value="error">
+                                    <Setter Property="BackgroundColor" Value="Red" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Border"
+                                             Binding="{Binding Status}"
+                                             Value="pendiente">
+                                    <Setter Property="BackgroundColor" Value="Gray" />
+                                </DataTrigger>
+                            </Border.Triggers>
+                        </Border>
+                    </AbsoluteLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

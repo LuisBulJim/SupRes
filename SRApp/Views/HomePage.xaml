@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SRApp.Views.HomePage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#f4f6f6">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Titulo y Settings -->
+        <Grid Grid.Row="0" Padding="20" VerticalOptions="Start">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Text="SupRes"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="5,5,0,0"
+                   VerticalOptions="Center"
+                   Grid.Column="0"/>
+            <ImageButton Source="gear.png"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Clicked="OnSettingsClicked"
+                         Grid.Column="1"/>
+        </Grid>
+
+        <!-- Contenido principal -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="20" Spacing="20">
+
+                <!-- Sección de noticias y actualizaciones -->
+                <Border Padding="15" BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Label Text="Noticias y actualizaciones de la app"
+                           TextColor="Black"
+                           FontSize="16"/>
+                </Border>
+
+                <!-- Imagen de ejemplo -->
+                <Border Padding="0" BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Image Source="super_resolution.png"
+                           Aspect="AspectFit"/>
+                </Border>
+
+                <!-- Más contenido -->
+                <Border Padding="15" BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Label Text="Con esta aplicación podrás mejorar la resolución de tus imagenes en segundos." 
+                           TextColor="Black"/>
+                </Border>
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

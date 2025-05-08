@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SRApp.Views.LoadingPage"
+    Title="Procesando Imagen">
+
+    <StackLayout Padding="20" Spacing="20" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Center">
+
+        <!-- Mensaje de carga -->
+        <Label x:Name="loadingLabel" 
+               Text="Cargando..." 
+               FontSize="20" 
+               HorizontalOptions="Center"/>
+
+        <!-- Indicador de actividad -->
+        <ActivityIndicator x:Name="activityIndicator" 
+                           IsRunning="True" />
+
+        <!-- Imagen de resultado, inicialmente oculta -->
+        <Image x:Name="resultImage" 
+               IsVisible="False" 
+               Aspect="AspectFit" />
+
+        <!-- Botón para descargar la reescalada, inicialmente oculto -->
+        <Button x:Name="DownloadReescaladaButton" 
+                Text="Descargar Imagen" 
+                IsVisible="False" 
+                BackgroundColor="#033750"
+                Clicked="OnDownloadReescaladaClicked"/>
+    </StackLayout>
+</ContentPage>

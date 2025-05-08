@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.TabBarIsVisible="False"
+    x:Class="SRApp.Views.LoginPage">
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <Label Text="Bienvenido"
+               FontSize="24"
+               Margin="0,25,0,0"
+               HorizontalOptions="Center" />
+
+        <!-- Entrada de Email -->
+        <Entry x:Name="EmailEntry"
+               Placeholder="Correo electrónico" />
+
+        <!-- Entrada de Contraseña -->
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Contraseña"
+               IsPassword="True" />
+
+        <!-- Botón para iniciar sesión -->
+        <Button Text="Iniciar Sesión"
+                BackgroundColor="#033750"
+                TextColor="White"
+                Clicked="OnLoginClicked" />
+
+        <!-- Botón para ir a la página de registro -->
+        <Button Text="¿No tienes cuenta? Regístrate"
+                Clicked="OnRegisterClicked"
+                BackgroundColor="Transparent"
+                TextColor="Blue" />
+    </StackLayout>
+</ContentPage>

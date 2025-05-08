@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        Shell.TabBarIsVisible="False"
+    x:Class="SRApp.Views.RegisterPage">
+
+    <StackLayout Padding="20" Spacing="20">
+        <Label Text="Regístrate"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="UsernameEntry"
+               Placeholder="Nombre de usuario" />
+
+        <Entry x:Name="EmailEntry"
+               Placeholder="Email" />
+
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Contraseña"
+               IsPassword="True" />
+
+        <Button Text="Crear Cuenta"
+                BackgroundColor="#033750"
+                Clicked="OnRegisterClicked" />
+    </StackLayout>
+</ContentPage>

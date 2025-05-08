@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SRApp.Views.ScalePage"
+    Title="Seleccionar escalado"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="True"
+    Shell.BackgroundColor="#f4f6f6"
+    BackgroundColor="#f4f6f6">
+
+    <!-- Contenido principal -->
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Botones de escalado -->
+            <Border x:Name="frameScale2"
+                    Padding="20"
+                    HorizontalOptions="Fill"
+                    Opacity="0.5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="#033750" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnScale2Tapped"/>
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+                    <Image Source="scale_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center"/>
+                    <Label Text="Modelo IA x2" TextColor="White" FontSize="16" VerticalOptions="Center"/>
+                </StackLayout>
+            </Border>
+
+            <Border x:Name="frameScale3"
+                    Padding="20"
+                    HorizontalOptions="Fill"
+                    Opacity="0.5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="#033750" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnScale3Tapped"/>
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+                    <Image Source="scale_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center"/>
+                    <Label Text="Modelo IA x3" TextColor="White" FontSize="16" VerticalOptions="Center"/>
+                </StackLayout>
+            </Border>
+
+            <Border x:Name="frameScale4"
+                    Padding="20"
+                    HorizontalOptions="Fill"
+                    Opacity="0.5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="#033750" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnScale4Tapped"/>
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+                    <Image Source="scale_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center"/>
+                    <Label Text="Modelo IA x4" TextColor="White" FontSize="16" VerticalOptions="Center"/>
+                </StackLayout>
+            </Border>
+
+            <Border x:Name="frameScale4Real"
+                    Padding="20"
+                    HorizontalOptions="Fill"
+                    Opacity="0.5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="#033750" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnScale4RealTapped"/>
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+                    <Image Source="scale_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center"/>
+                    <Label Text="Modelo IA x4 + Nitidez" TextColor="White" FontSize="16" VerticalOptions="Center"/>
+                </StackLayout>
+            </Border>
+
+            <!-- Vista previa de la imagen -->
+            <Label Text="Vista previa de la imagen seleccionada:" 
+                   FontSize="16" 
+                   TextColor="Black" 
+                   HorizontalOptions="Center"/>
+            <Image x:Name="PreviewImage" 
+                   Aspect="AspectFit" 
+                   HeightRequest="200" 
+                   HorizontalOptions="Fill"/>
+
+            <!-- Botón para comenzar reescalado -->
+            <Border x:Name="frameStartScaling"
+                    Padding="25"
+                    HorizontalOptions="Fill"
+                    Opacity="1.0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="#033750" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnStartScalingClicked"/>
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Comenzar reescalado" 
+                           TextColor="White" 
+                           FontSize="18" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center"/>
+                </StackLayout>
+            </Border>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

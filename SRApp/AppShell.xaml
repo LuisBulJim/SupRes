@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:SRApp.Views"
+       x:Class="SRApp.AppShell"
+       Shell.TabBarForegroundColor="Black" 
+       Shell.TabBarTitleColor="Black"
+       Shell.TabBarUnselectedColor="Gray"
+       Shell.TabBarBackgroundColor="White">
+
+    <TabBar>
+        <ShellContent Title="Inicio"
+                      Icon="home.png"
+                      Route="HomePage"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent Title="Añadir"
+                      Icon="add.png"
+                      Route="AddPage"
+                      ContentTemplate="{DataTemplate views:AddPage}" />
+
+        <ShellContent Title="Historial"
+                      Icon="history.png"
+                      Route="HistoryPage"
+                      ContentTemplate="{DataTemplate views:HistoryPage}" />
+    </TabBar>
+
+</Shell>
