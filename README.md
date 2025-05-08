@@ -4,22 +4,12 @@
 
 <h1 align="center">Supres</h1>
 
-<p align="center">La forma más sencilla de gestionar <em>lo que sea que haga tu aplicación</em>.</p>
+<p align="center">Una forma sencilla de mejorar la resolución en imágenes.</p>
 
-[![Versión](https://img.shields.io/github/v/release/tu-usuario/supres?include_prereleases)](https://github.com/tu-usuario/supres/releases)
-[![Licencia](https://img.shields.io/github/license/tu-usuario/supres)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/tu-usuario/supres)](https://github.com/tu-usuario/supres/issues)
 
 ## Descripción
 
-Supres es una aplicación que simplifica y agiliza la gestión de <em>(describe aquí la funcionalidad principal)</em>. Con un enfoque en la experiencia del usuario, Supres ofrece una interfaz limpia y una arquitectura sólida que garantizan un rendimiento estable y seguro.
-
-
-<!-- inserta aquí capturas de pantalla -->
-
-<p align="center">
-  <img src="assets/screenshot1.png" alt="Supres captura 1" width="600">
-</p>
+Supres es una aplicación que mejora la resolución en imágenes mediante algoritmos de machine learning. Esta aplicación ofrece una interfaz limpia y una arquitectura sólida que garantizan un rendimiento estable y seguro.
 
 ## Características
 
